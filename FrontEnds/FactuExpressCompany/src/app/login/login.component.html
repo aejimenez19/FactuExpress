@@ -1,0 +1,42 @@
+<div class="auth-container" id="container">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+    <img class="mx-auto h-24 w-24 rounded-full" src="assets/logo.jpg" alt="FactuExpress">
+    <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900" id="h2">
+
+      FactuExpress
+    </h2>
+  </div>
+
+  <div class="auth-card">
+    <h2>Iniciar sesión</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input id="user" type="text" formControlName="user" required placeholder="usuario">
+        <div *ngIf="user?.invalid && (user?.dirty || user?.touched)" class="error-message">
+          <div *ngIf="user?.errors?.['required']">El usuario es requerido.</div>
+          <div *ngIf="user?.errors?.['usuario']">Usuario inválido.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input id="password" type="password" formControlName="password" required placeholder="Contraseña">
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error-message">
+          <div *ngIf="password?.errors?.['required']">La contraseña es requerida.</div>
+          <div *ngIf="password?.errors?.['minlength']">Mínimo 6 caracteres.</div>
+        </div>
+      </div>
+
+      <div class="form-group remember-me">
+        <input id="remember-me" type="checkbox">
+        <label id="recordarme" for="remember-me">Recordarme</label>
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid">Iniciar sesión</button>
+    </form>
+
+    <div class="additional-links">
+      <a href="#">¿Olvidaste tu contraseña?</a>
+      <a routerLink="/register">¿No tienes una cuenta? Regístrate</a>
+    </div>
+  </div>
+</div>

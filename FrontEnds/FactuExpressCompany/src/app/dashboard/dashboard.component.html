@@ -1,0 +1,52 @@
+<div class="flex h-screen bg-gray-100">
+  <aside class="w-64 bg-dark-green text-white">
+    <div class="p-6">
+      <h1 id="logo" class="text-2xl font-bold mb-8">FactuExpress</h1>
+      <nav>
+        <ul>
+          <li class="mb-4">
+            <h2 class="text-xl font-bold mb-4"> Factura</h2>
+            <a routerLink="/dashboard/facturas" class="flex items-center hover:text-gray-300">
+              <span class=" mr-2">📄</span> Nueva factura
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="flex-1 p-8 overflow-auto">
+    <header class="flex justify-between items-center mb-8">
+      <button routerLink="/logout"
+        class="bg-dark-green text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
+        Cerrar sesión
+      </button>
+    </header>
+
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <h3 class="text-xl font-bold mb-4">Detalles de la factura</h3>
+      <div>
+        <label for="invoiceRef" class="block text-sm font-medium text-gray-700">Numero referencia de la
+          factura</label>
+          <input type="text" id="invoiceRef" name="invoiceRef" [(ngModel)]="invoiceRef"
+          class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+          placeholder="1EF341341" />
+      </div>
+      <div>
+        <label for="clientId" class="block text-sm font-medium text-gray-700">Cedula del cliente</label>
+        <input type="text" id="clientId" name="clientId" [(ngModel)]="clientId" 
+          class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+          placeholder="1341341334141" />
+      </div>
+      <div>
+        <label for="paymentType" class="block text-sm font-medium text-gray-700">Tipo de pago</label>
+        <input type="text" id="paymentType" name="paymentType" [(ngModel)]="paymentType" 
+          class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
+          placeholder="Efectivo" />
+      </div>
+    </div>
+
+    <app-product-table [invoiceRef]="invoiceRef" [clientId]="clientId" [paymentType]="paymentType">
+    </app-product-table>
+  </main>
+</div>

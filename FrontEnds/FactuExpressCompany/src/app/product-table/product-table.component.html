@@ -1,0 +1,112 @@
+<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <h3 class="text-xl font-bold mb-4">Agregar Producto</h3>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="space-y-4">
+    <div>
+      <label for="code_reference" class="block text-sm font-medium text-gray-700">Código de Referencia</label>
+      <input id="code_reference" type="text" formControlName="code_reference" required
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+      <div *ngIf="code_reference?.invalid && (code_reference?.dirty || code_reference?.touched)"
+        class="text-red-500 text-xs mt-1">
+        <div *ngIf="code_reference?.errors?.['required']">El código de referencia es requerido.</div>
+        <div *ngIf="code_reference?.errors?.['pattern']">El código de referencia solo puede contener letras y números.
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700">Nombre del Producto</label>
+      <input id="name" type="text" formControlName="name" required
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+      <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="text-red-500 text-xs mt-1">
+        <div *ngIf="name?.errors?.['required']">El nombre del producto es requerido.</div>
+        <div *ngIf="name?.errors?.['minlength']">El nombre debe tener al menos 3 caracteres.</div>
+      </div>
+    </div>
+    <div>
+      <label for="quantity" class="block text-sm font-medium text-gray-700">Cantidad</label>
+      <input id="quantity" type="number" formControlName="quantity" required
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+      <div *ngIf="quantity?.invalid && (quantity?.dirty || quantity?.touched)" class="text-red-500 text-xs mt-1">
+        <div *ngIf="quantity?.errors?.['required']">La cantidad es requerida.</div>
+        <div *ngIf="quantity?.errors?.['min']">La cantidad debe ser al menos 1.</div>
+      </div>
+    </div>
+    <div>
+      <label for="discount" class="block text-sm font-medium text-gray-700">Descuento</label>
+      <input id="discount" type="number" formControlName="discount" required
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+      <div *ngIf="discount?.invalid && (discount?.dirty || discount?.touched)" class="text-red-500 text-xs mt-1">
+        <div *ngIf="discount?.errors?.['required']">El descuento es requerido.</div>
+        <div *ngIf="discount?.errors?.['min']">El descuento no puede ser negativo.</div>
+      </div>
+    </div>
+    <div>
+      <label for="discount_rate" class="block text-sm font-medium text-gray-700">Tasa de Descuento (%)</label>
+      <input id="discount_rate" type="number" formControlName="discount_rate" required
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+      <div *ngIf="discount_rate?.invalid && (discount_rate?.dirty || discount_rate?.touched)"
+        class="text-red-500 text-xs mt-1">
+        <div *ngIf="discount_rate?.errors?.['required']">La tasa de descuento es requerida.</div>
+        <div *ngIf="discount_rate?.errors?.['min']">La tasa de descuento no puede ser negativa.</div>
+        <div *ngIf="discount_rate?.errors?.['max']">La tasa de descuento no puede ser mayor a 100%.</div>
+      </div>
+    </div>
+    <div>
+      <label for="price" class="block text-sm font-medium text-gray-700">Precio</label>
+      <input id="price" type="number" formControlName="price" required
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+      <div *ngIf="price?.invalid && (price?.dirty || price?.touched)" class="text-red-500 text-xs mt-1">
+        <div *ngIf="price?.errors?.['required']">El precio es requerido.</div>
+        <div *ngIf="price?.errors?.['min']">El precio no puede ser negativo.</div>
+      </div>
+    </div>
+    <div>
+      <label for="tax_rate" class="block text-sm font-medium text-gray-700">Tasa de Impuesto (%)</label>
+      <input id="tax_rate" type="text" formControlName="tax_rate" required
+        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+      <div *ngIf="tax_rate?.invalid && (tax_rate?.dirty || tax_rate?.touched)" class="text-red-500 text-xs mt-1">
+        <div *ngIf="tax_rate?.errors?.['required']">La tasa de impuesto es requerida.</div>
+        <div *ngIf="tax_rate?.errors?.['pattern']">Formato inválido. Use hasta 2 decimales (ej: 19.00).</div>
+      </div>
+    </div>
+    <button type="submit" [disabled]="productForm.invalid"
+      class="bg-dark-green text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
+      Agregar Producto
+    </button>
+  </form>
+</div>
+
+<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mt-8">
+  <h3 class="text-xl font-bold mb-4">Productos Agregados</h3>
+  <table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
+      <tr>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Código</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cantidad</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Descuento</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tasa de Descuento
+        </th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Precio</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tasa de Impuesto</th>
+      </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      <tr *ngFor="let product of invoice.items">
+        <td class="px-6 py-4 whitespace-nowrap">{{ product.code_reference }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ product.name }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ product.quantity }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ product.discount | copCurrency }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ product.discount_rate }}%</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ product.price | copCurrency }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ product.tax_rate }}%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="mt-6">
+    <button (click)="enviarInvoice()" [disabled]="invoice.items.length === 0 || sendingInvoice"
+      class="bg-dark-green text-white px-6 py-3 rounded hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+      {{ sendingInvoice ? 'Enviando...' : 'Enviar Factura' }}
+    </button>
+  </div>
+</div>

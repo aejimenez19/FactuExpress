@@ -1,0 +1,42 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-dark-green {
+  background-color: #114122;
+
+}
+
+.text-dark-green {
+  color: #0f3d3e;
+}
+#logo {
+  background-color: #042f20;
+
+  color: #fcfcfc;
+    text-align: center;
+    margin: -23px  -23px 1px -23px;
+
+    padding: 50px 100px 50px 50px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+a:link {
+  color: rgb(240, 226, 226);
+
+}
+
+a:visited {
+  color: rgb(95, 23, 239);
+}
+
+a:hover {
+
+  cursor: pointer;
+}
+
+a:active {
+  color: rgb(250, 5, 205);
+}
+
