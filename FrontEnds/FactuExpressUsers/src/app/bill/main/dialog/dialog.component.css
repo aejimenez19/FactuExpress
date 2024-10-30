@@ -1,0 +1,70 @@
+.dialog h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 35px;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 250;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+.input-field{
+    position: relative;
+    margin-top: 20px;
+}
+.input-field input{
+    width: 200px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 14px;
+    padding: 0 15px;
+    border: 1px solid #323030;
+    background: transparent;
+    color: #323030;
+    outline: none;
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #323030;
+    font-size: 14px;
+    pointer-events: none;
+    transition: .3s;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label{
+    top: 0;
+    left: 15px;
+    font-size: 12px;
+    padding: 0 2px;
+    background: #ffff;
+}
+
+
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    margin: 0px 40px;
+    margin-top: 50px;
+}
+.action {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: medium;
+    background-color: rgb(18, 114, 18);
+    color: #ffff;
+    border: none;
+    border-radius: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+}

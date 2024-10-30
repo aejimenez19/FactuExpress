@@ -1,0 +1,54 @@
+<div class="background">
+    <app-nav-bar />
+    <div class="nombre">
+        <h1>Hola, {{info.nombre}}...</h1>
+        <span class="remaining-space"></span>
+        <img src="../../../assets/mujer.png" alt="" class="img">  
+    </div>
+    <div class="Overview">
+        <div class="icono back-grey">
+            <i class="fa-solid fa-chart-line"></i>
+            <div class="text">
+                <p>{{numfac}}</p>
+                <p>Facturas</p>
+            </div>
+        </div>
+        <div>
+            <div class="icono back-green">
+                <i class="fa-solid fa-arrow-up-wide-short"></i>
+                <div class="text">
+                    <p>{{ahorro}} cm</p>
+                    <p>Ahorrado</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <div class="item">
+            <p class="title">Nombre:</p>
+            <span class="remaining-space"></span>
+            <p class="itemInfo">{{info.nombre}} {{info.apellido}}</p>
+            <span class="remaining-space"></span>
+        </div>
+        <div class="item">
+            <p class="title">Documento:</p>
+            <span class="remaining-space"></span>
+            <p class="itemInfo">CC {{info.cedula}}</p>
+            <span class="remaining-space"></span>
+        </div>
+        <div class="item">
+            <p class="title">Correo:</p>
+            <span class="remaining-space"></span>
+            <p class="itemInfo">{{info.correo}}</p>
+            <span class="remaining-space"></span>
+        </div>
+        <div class="item end">
+            <p class="title">Celular:</p>
+            <span class="remaining-space"></span>
+            <p class="itemInfo">{{info.telefono}}</p>
+            <span class="remaining-space"></span>
+        </div>
+    </div>
+      
+
+</div>

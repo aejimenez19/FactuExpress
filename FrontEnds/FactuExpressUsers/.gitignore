@@ -1,0 +1,36 @@
+# Node Modules
+node_modules/
+.angular/
+
+# Compiled output
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+/jspm_packages/
+/bower_components/
+
+# Typescript helper
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+Thumbs.db

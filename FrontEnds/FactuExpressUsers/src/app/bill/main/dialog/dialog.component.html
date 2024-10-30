@@ -1,0 +1,30 @@
+
+<div class="dialog">
+    <h1 mat-dialog-title>Terminemos tu registro </h1>
+    <div class="grid">
+        <div >
+            <div class="input-field">
+              <input type="text" required placeholder="" [(ngModel)]="data.first_name">
+              <label>Ingresa nombre</label>
+            </div>
+        </div>
+        <div mat-dialog-content>
+            <div class="input-field">
+              <input type="text" required placeholder=""  [(ngModel)]="data.last_name">
+              <label>Ingresa apellido</label>
+            </div>
+        </div>
+        <div mat-dialog-content>
+            <div class="input-field">
+              <input type="text" required placeholder=""  [(ngModel)]="data.number_identification">
+              <label>Ingresa su numero de identificacion</label>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div mat-dialog-actions class="action" >
+  <button class="button"  (click)="guardarUsuario()">Guardar</button>
+</div>
+

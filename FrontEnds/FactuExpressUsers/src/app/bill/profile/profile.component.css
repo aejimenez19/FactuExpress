@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+.background{
+    background-color: #e6e7e2;
+    min-height: 100vh;
+}
+
+.nombre{
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 70px;
+    background-color: #397d54;
+    height: 150px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.remaining-space {
+    flex: 1 1 auto;
+}
+
+
+.nombre h1{
+    font-size: 50px;
+    color: #ffff;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.img{
+    width: 400px;
+    height: 300px;
+}
+.Overview {
+    margin-left: 150px;
+    margin-right: 150px;
+    display: flex;
+}
+
+.icono {
+    margin-top: 20px;
+    height: 50px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.icono i {
+    font-size: 20px;
+    color: #ffff;
+}
+
+.text{
+    margin-left: 25px;
+    line-height: 0.2;
+    margin-top: 10px;
+    color: #ffff;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.back-grey{
+    background-color: #c0cfb2;
+}
+.back-green{
+    background-color: #8aa989;
+}
+
+
+.info{
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 50px;
+    width: 800px;
+    background-color: #ffff;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    padding: 20px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.363);
+}
+
+.item{
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+}
+
+.title{
+    font-weight: bold;
+}
+
+
+.edit{
+    color: #397d54; 
+    font-weight: 400;
+}
+
+.end{
+    border-bottom: none;
+    margin-bottom: 0px;
+}

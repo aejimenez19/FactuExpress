@@ -1,0 +1,23 @@
+.title{
+    text-align: center;
+    font-size: 35px;
+    margin-top: 20px;
+    font-weight: bolder;
+}
+.header{
+    margin-top: -15px;
+    text-align: center;
+    line-height: 0.5;
+    font-size: 10px;
+}
+.productos h3 {
+    font-weight: bold;
+}
+.totales{
+    text-align: end;
+    margin-top: 50px;
+    color: black;
+}
+.totales h2{
+    font-weight: bold;
+}

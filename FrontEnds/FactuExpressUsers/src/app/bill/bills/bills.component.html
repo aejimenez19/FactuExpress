@@ -1,0 +1,40 @@
+<div class="background">
+  <app-nav-bar />
+  <div class="mat">
+      <app-list-mon-year (dates)="recibirDatoDelHijo($event)"/>
+      @if (comercios.length == 0) {
+        <h2>No tienes facturas registradas</h2>
+      }
+      <mat-accordion >
+        @for (comercio of comercios; track $index) {
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>        
+              <mat-panel-title>
+                {{comercio.namecompany}}
+              </mat-panel-title>
+              <mat-panel-description>
+                <p>Total facturas: {{ comercio.bills.length }}</p>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ng-template matExpansionPanelContent>
+                <mat-list>
+                  @for (factura of comercio.bills; track $index) {
+                    <mat-list-item class="mat-list-item">
+                      <h3 matListItemTitle>Ref: {{factura.referencesCode}}</h3>
+                      <p matListItemMeta > Fecha: {{factura.date}}</p>
+                      <!--<p matListItemMeta > total factura: {{factura.total}}</p>-->
+                      <app-dialog-detalle matListItemMeta [factura]="factura"/>
+                    </mat-list-item>
+                  }
+                </mat-list> 
+            </ng-template>  
+          </mat-expansion-panel>
+
+        }
+        
+      </mat-accordion>
+  </div>
+</div>
+
+
+
