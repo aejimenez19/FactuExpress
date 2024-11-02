@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.39, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 9.1.0, for Linux (x86_64)
 --
 -- Host: localhost    Database: factuexpress
 -- ------------------------------------------------------
--- Server version	8.0.39-0ubuntu0.24.04.2
+-- Server version	9.1.0
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -19,7 +19,6 @@
 -- Table structure for table `bills`
 --
 CREATE DATABASE factuexpress;
-USE factuexpress;
 DROP TABLE IF EXISTS `bills`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -29,6 +28,7 @@ CREATE TABLE `bills` (
   `id_company` int DEFAULT NULL,
   `id_type_payment` int DEFAULT NULL,
   `references_code` varchar(100) DEFAULT NULL,
+  `billing_date` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_id_customer_bills` (`id_customer`),
   KEY `FK_id_company_bills` (`id_company`),
@@ -36,43 +36,8 @@ CREATE TABLE `bills` (
   CONSTRAINT `FK_id_company_bills` FOREIGN KEY (`id_company`) REFERENCES `companys` (`id`),
   CONSTRAINT `FK_id_customer_bills` FOREIGN KEY (`id_customer`) REFERENCES `customers` (`id`),
   CONSTRAINT `FK_id_type_payment_bills` FOREIGN KEY (`id_type_payment`) REFERENCES `type_payment` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `bills`
---
-
-LOCK TABLES `bills` WRITE;
-/*!40000 ALTER TABLE `bills` DISABLE KEYS */;
-/*!40000 ALTER TABLE `bills` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `company_credentials`
---
-
-DROP TABLE IF EXISTS `company_credentials`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `company_credentials` (
-  `id_credential` int DEFAULT NULL,
-  `id_company` int DEFAULT NULL,
-  KEY `FK_id_credential` (`id_credential`),
-  KEY `FK_id_company` (`id_company`),
-  CONSTRAINT `FK_id_company` FOREIGN KEY (`id_company`) REFERENCES `companys` (`id`),
-  CONSTRAINT `FK_id_credential` FOREIGN KEY (`id_credential`) REFERENCES `credentials` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `company_credentials`
---
-
-LOCK TABLES `company_credentials` WRITE;
-/*!40000 ALTER TABLE `company_credentials` DISABLE KEYS */;
-/*!40000 ALTER TABLE `company_credentials` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `companys`
@@ -88,17 +53,8 @@ CREATE TABLE `companys` (
   `phone` varchar(20) DEFAULT NULL,
   `status` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `companys`
---
-
-LOCK TABLES `companys` WRITE;
-/*!40000 ALTER TABLE `companys` DISABLE KEYS */;
-/*!40000 ALTER TABLE `companys` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `credentials`
@@ -112,44 +68,10 @@ CREATE TABLE `credentials` (
   `user_name` varchar(100) DEFAULT NULL,
   `password_hash` varchar(255) DEFAULT NULL,
   `last_login` datetime DEFAULT NULL,
+  `id_company` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `credentials`
---
-
-LOCK TABLES `credentials` WRITE;
-/*!40000 ALTER TABLE `credentials` DISABLE KEYS */;
-/*!40000 ALTER TABLE `credentials` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `customer_credentials`
---
-
-DROP TABLE IF EXISTS `customer_credentials`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `customer_credentials` (
-  `id_credential` int DEFAULT NULL,
-  `id_customer` int DEFAULT NULL,
-  KEY `FK_id_credentials` (`id_credential`),
-  KEY `FK_id_customer` (`id_customer`),
-  CONSTRAINT `FK_id_credentials` FOREIGN KEY (`id_credential`) REFERENCES `credentials` (`id`),
-  CONSTRAINT `FK_id_customer` FOREIGN KEY (`id_customer`) REFERENCES `customers` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `customer_credentials`
---
-
-LOCK TABLES `customer_credentials` WRITE;
-/*!40000 ALTER TABLE `customer_credentials` DISABLE KEYS */;
-/*!40000 ALTER TABLE `customer_credentials` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `customers`
@@ -166,17 +88,8 @@ CREATE TABLE `customers` (
   `status` int DEFAULT NULL,
   `number_identification` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `customers`
---
-
-LOCK TABLES `customers` WRITE;
-/*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-/*!40000 ALTER TABLE `customers` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `items`
@@ -198,17 +111,8 @@ CREATE TABLE `items` (
   PRIMARY KEY (`id`),
   KEY `FK_id_bills_items` (`id_bill`),
   CONSTRAINT `FK_id_bills_items` FOREIGN KEY (`id_bill`) REFERENCES `bills` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `items`
---
-
-LOCK TABLES `items` WRITE;
-/*!40000 ALTER TABLE `items` DISABLE KEYS */;
-/*!40000 ALTER TABLE `items` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `type_payment`
@@ -225,16 +129,6 @@ CREATE TABLE `type_payment` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `type_payment`
---
-
-LOCK TABLES `type_payment` WRITE;
-/*!40000 ALTER TABLE `type_payment` DISABLE KEYS */;
-INSERT INTO `type_payment` VALUES (1,'Efectivo','Pago en efectivo',1),(2,'Tarjeta debito','Pago con tarjeta debito',1),(3,'Tarjeta credito','Pago con tarjeta credito',1);
-/*!40000 ALTER TABLE `type_payment` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -245,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-12 14:40:47
+-- Dump completed on 2024-11-02  4:04:47
