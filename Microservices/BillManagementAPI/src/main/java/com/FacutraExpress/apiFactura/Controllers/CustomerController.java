@@ -1,6 +1,7 @@
 package com.FacutraExpress.apiFactura.Controllers;
 
 import com.FacutraExpress.apiFactura.Models.Dto.CustomerDto;
+import com.FacutraExpress.apiFactura.Models.Dto.PaperSavingDto;
 import com.FacutraExpress.apiFactura.Models.Entities.Customer;
 import com.FacutraExpress.apiFactura.Service.CustomerService;
 import org.springframework.http.HttpStatus;
@@ -42,4 +43,11 @@ public class CustomerController {
     public ResponseEntity<Customer> saveCustomer(@RequestBody CustomerDto customer) {
         return new ResponseEntity<>(customerService.saveCustomer(customer), HttpStatus.OK);
     }
+
+    @GetMapping("papersaving/{id}")
+    public ResponseEntity<PaperSavingDto> getPaperSaving(@PathVariable Long id) {
+        return new ResponseEntity<>(customerService.getPaperSaving(id), HttpStatus.OK);
+    }
+
+
 }

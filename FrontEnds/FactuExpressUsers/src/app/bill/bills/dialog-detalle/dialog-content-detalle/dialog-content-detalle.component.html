@@ -1,16 +1,16 @@
 
 <mat-dialog-content class="mat-typography">
-  <h1 mat-dialog-title class="title">{{factura.comercio?.razon}}</h1>
+  <h1 mat-dialog-title class="title">{{comercio?.name}}</h1>
   <div class="header">
-      <p>Nit: {{factura?.comercio?.nit}} Grandes contribuyentes</p>
-    <p>Telefono: {{factura.comercio?.telefono}}</p>
-    <p>direccion: {{factura.comercio?.direccion}} {{factura.comercio?.departamento}}</p>
-    <p>Nro Factura: {{factura.numeroFactura}}</p>
-    <p>fecha: {{factura.fecha}}</p>
+      <p>Nit: {{comercio?.nit}} Grandes contribuyentes</p>
+    <p>Telefono: {{comercio?.phone}}</p>
+    <p>Email: {{comercio?.email}}</p>
+    <p>Nro Factura: {{factura.referencesCode}}</p>
+    <p>fecha: {{factura.date}}</p>
   </div>
   <div class="productos">
     <h3>Productos</h3>
-    <app-product-table-content [productos]="factura.productos"/>
+    <app-product-table-content [id]="factura.id"/>
   </div>
   <div class="totales">
     <h3>Sub total: {{factura.subtotal}}</h3>

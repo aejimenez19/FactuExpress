@@ -1,8 +1,12 @@
 package com.FacutraExpress.apiFactura.Service;
 
 import com.FacutraExpress.apiFactura.Models.Dto.CustomerDto;
+import com.FacutraExpress.apiFactura.Models.Dto.PaperSavingDto;
 import com.FacutraExpress.apiFactura.Models.Entities.Customer;
+import com.FacutraExpress.apiFactura.Models.Entities.PaperSaving;
 import com.FacutraExpress.apiFactura.Repository.CustomerRepository;
+import com.FacutraExpress.apiFactura.Repository.PaperSavingRepository;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -10,9 +14,11 @@ import java.util.Optional;
 @Service
 public class CustomerService {
     private final CustomerRepository customerRepository;
+    private final PaperSavingRepository paperSavingRepository;
 
-    public CustomerService(CustomerRepository customerRepository) {
+    public CustomerService(CustomerRepository customerRepository, PaperSavingRepository paperSavingRepository) {
         this.customerRepository = customerRepository;
+        this.paperSavingRepository = paperSavingRepository;
     }
 
 
@@ -44,5 +50,10 @@ public class CustomerService {
                 .status(1)
                 .numberIdentification(customerDto.getNumberIdentification())
                 .build();
+    }
+
+    public PaperSavingDto getPaperSaving(Long id) {
+         PaperSaving paperSaving = Optional.of(id).flatMap(paperSavingRepository::getPaperSaving).orElse(null);
+         return null;
     }
 }

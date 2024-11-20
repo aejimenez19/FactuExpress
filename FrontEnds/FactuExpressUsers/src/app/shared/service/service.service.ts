@@ -12,6 +12,13 @@ export class ServiceService {
 
   private apiUrl = 'http://localhost:8080';
 
+  getCompanyWhitIdBill(id:any): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/company/${id}`)
+  }
+
+  getItemsWhitIdBill(id:any): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/item/${id}`)
+  }
   getInfoUser(id:any): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/usuario/${id}`)
   }

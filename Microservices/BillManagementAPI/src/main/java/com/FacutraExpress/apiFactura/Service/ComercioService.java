@@ -1,6 +1,7 @@
 package com.FacutraExpress.apiFactura.Service;
 
 import com.FacutraExpress.apiFactura.Models.Comercio;
+import com.FacutraExpress.apiFactura.Models.Entities.Company;
 import com.FacutraExpress.apiFactura.Repository.ComercioRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,4 +18,6 @@ public class ComercioService {
     public List<Comercio> obtenerFacturaPorFecha(int idUsuario) {
         return comercioRepository.getComerciosForUser(idUsuario);
     }
+
+
 }

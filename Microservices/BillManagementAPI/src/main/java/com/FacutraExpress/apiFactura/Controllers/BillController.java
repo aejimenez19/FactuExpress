@@ -25,4 +25,6 @@ public class BillController {
                                                               @PathVariable String date) {
         return new ResponseEntity<>(billService.getBillsByDate(id, date), HttpStatus.OK);
     }
+
+
 }

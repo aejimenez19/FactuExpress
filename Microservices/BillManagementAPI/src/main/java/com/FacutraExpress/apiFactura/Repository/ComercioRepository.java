@@ -17,4 +17,6 @@ public interface ComercioRepository extends JpaRepository<Comercio, Integer> {
 
     @Query(value = "select * from comercio where id_comercio = ?1", nativeQuery = true)
     Comercio findById(int id);
+
+
 }

@@ -1,6 +1,7 @@
 package com.FacutraExpress.apiFactura.Controllers;
 
 import com.FacutraExpress.apiFactura.Models.Comercio;
+import com.FacutraExpress.apiFactura.Models.Entities.Company;
 import com.FacutraExpress.apiFactura.Service.ComercioService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,5 +26,7 @@ public class ComercioController {
     public ResponseEntity<List<Comercio>> getComercionsWithUser(@PathVariable int idUsuario) {
         return new ResponseEntity<>(comercioService.obtenerFacturaPorFecha(idUsuario), HttpStatus.OK);
     }
+
+
 
 }

@@ -37,6 +37,7 @@ export class BillsComponent implements OnInit{
   obtenerFacturas() {
     this.service.getFacturas(localStorage.getItem("Id"), this.fecha).subscribe((response => {
       this.comercios = response;
+      console.log(response)
     }))
   }
 
