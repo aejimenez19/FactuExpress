@@ -16,6 +16,10 @@ export class ServiceService {
     return this.http.get<any>(`${this.apiUrl}/company/${id}`)
   }
 
+  getTotalItems(id:any): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/item/total/${id}`)
+  }
+
   getItemsWhitIdBill(id:any): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/item/${id}`)
   }

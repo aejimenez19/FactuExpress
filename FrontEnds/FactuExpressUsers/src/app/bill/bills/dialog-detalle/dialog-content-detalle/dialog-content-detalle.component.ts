@@ -19,13 +19,16 @@ export class DialogContentDetalleComponent implements OnInit {
   }
   comercio:any;
   items:any;
+  total:any;
 
   ngOnInit(): void {
     this.service.getCompanyWhitIdBill(this.factura.id).subscribe((response => {
       this.comercio = response;
     }))
 
-    
+    this.service.getTotalItems(this.factura.id).subscribe((response => {
+      this.total = response;
+    }))
   }
 
 }

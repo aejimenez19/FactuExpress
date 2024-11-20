@@ -13,9 +13,7 @@
     <app-product-table-content [id]="factura.id"/>
   </div>
   <div class="totales">
-    <h3>Sub total: {{factura.subtotal}}</h3>
-    <h3>Iva:  {{factura.iva}}</h3>
-    <h2>Total: {{factura.total}}</h2>
+    <h2>Total: {{total}}</h2>
   </div>
 
   
@@ -23,6 +21,5 @@
 
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cerrar</button>
-  <button mat-flat-button color="primary" mat-dialog-close>Importar</button>
 </mat-dialog-actions>
 

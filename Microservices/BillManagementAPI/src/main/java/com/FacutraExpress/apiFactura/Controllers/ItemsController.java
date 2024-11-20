@@ -25,4 +25,9 @@ public class ItemsController {
     public ResponseEntity<List<Item>> getItemsWhitIdBill(@PathVariable Long idBill){
         return new ResponseEntity<>(itemService.getItemWhitIdBill(idBill), HttpStatus.OK);
     }
+
+    @GetMapping("total/{idBill}")
+    public ResponseEntity<Double> getTotalItems(@PathVariable Long idBill){
+        return new ResponseEntity<>(itemService.getTotalItems(idBill), HttpStatus.OK);
+    }
 }

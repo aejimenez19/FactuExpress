@@ -17,4 +17,14 @@ public class ItemService {
     public List<Item> getItemWhitIdBill(Long idBill) {
         return itemsRepository.findAllByIdBill(idBill);
     }
+
+
+    public Double getTotalItems(Long idBill){
+        List<Item> items = itemsRepository.findAllByIdBill(idBill);
+        double total = (double) 0;
+        for (Item item: items) {
+            total += item.getPrice() * item.getQuantity();
+        }
+        return total;
+    }
 }
