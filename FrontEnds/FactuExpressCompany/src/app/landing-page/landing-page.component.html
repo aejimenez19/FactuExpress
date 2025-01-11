@@ -1,5 +1,5 @@
-<div class="relative min-h-screen bg-white text-gray-800 flex flex-col">
-  <div class="absolute top-0 left-0 w-full overflow-hidden">
+<div class="">
+  <div class="absolute top-0 left-0 w-full overflow-hidden" >
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full h-auto">
       <path fill="#0a3622" fill-opacity="1"
         d="M0,224L80,213.3C160,203,320,181,480,186.7C640,192,800,224,960,234.7C1120,245,1280,235,1360,229.3L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
@@ -7,21 +7,28 @@
     </svg>
   </div>
 
-  <header class="relative z-10 p-4 flex justify-between items-center">
-    <h1 class="text-3xl font-bold text-white">Factuexpress</h1>
-    <h2 class="text-white text-2xl md:text-4xl lg:text-5xl font-bold text-center ">
-      Envía las facturas a tus <br>clientes por <span class="highlight text-green-500">FactuExpress.</span>
-    </h2>
+  <!--   -->
+  
+  <header>
+    <!--  Logo -->
+    <h1 class="">Factuexpress</h1>
 
-    <button (click)="navigateToRegister()"
-      class="bg-white text-green-800 px-4 py-2 rounded hover:bg-green-700 transition-colors">
-      Login
+    <!-- Btn login -->
+    <button (click)="navigateToRegister()" class="">
+      Ya soy aliado
     </button>
   </header>
 
-  <main class="relative z-10 flex-grow flex flex-col items-center justify-center px-4 text-center">
-    <p class="max-w-2xl mb-8 text-gray-600">
+  <!-- titulo principal  -->
+  <div class="">
+    <h2 class="">
+      Envía las facturas a tus <br>clientes por <span class="">FactuExpress.</span>
+    </h2>
+  </div>
 
+  <!-- Bienvenida  -->
+  <main class="">
+    <p class="">
       Bienvenido a nuestra plataforma, donde <strong>facilitamos la gestión de facturas</strong> para
       comercios y clientes. Con nuestra herramienta, los comercios pueden <strong>enviar
         fácilmente las facturas</strong> de sus clientes de manera digital, asegurando que
@@ -29,44 +36,50 @@
       interminables: ahora, tus facturas estarán al alcance de un clic, simplificando tus
       finanzas y mejorando tu experiencia de compra.
     </p>
-    <div class="flex flex-col sm:flex-row gap-4">
-      <button routerLink="/register"
-        class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition-colors">
+
+    
+    <div class="">
+      <!--  Btn registrarse -->
+      <button routerLink="/register" class="">
         Quiero ser aliado
       </button>
-      <button
-        class="bg-transparent border border-green-600 text-green-600 px-6 py-3 rounded hover:bg-green-600 hover:text-white transition-colors">
+      <!--  Btn para acceder a nuetra documentacion -->
+      <button class="">
         Documentacion
       </button>
     </div>
   </main>
 
-  <div class="info-section bg-gray-100 py-12 px-4 mt-12">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="info-column1">
-        <h3 class="text-xl font-semibold mb-4 text-green-800">Nosotros</h3>
-        <ul class="space-y-2 text-gray-600">
-          <li class="hover:text-green-600 cursor-pointer">¿Quiénes somos?</li>
-          <li class="hover:text-green-600 cursor-pointer">Planes a futuro</li>
+
+  <!-- Hacerca de nosotros  -->
+  <div class="">
+    <div class="">
+      <div class="">
+        <h3 class="">Nosotros</h3>
+        <ul class="">
+          <li class="">¿Quiénes somos?</li>
+          <li class="">Planes a futuro</li>
         </ul>
       </div>
-      <div class="info-column">
-        <h3 class="text-xl font-semibold mb-4 text-green-800">Sistema</h3>
-        <ul class="space-y-2 text-gray-600">
-          <li class="hover:text-green-600 cursor-pointer">API</li>
+      <div class="">
+        <h3 class="">Sistema</h3>
+        <ul class="">
+          <li class="">API</li>
         </ul>
       </div>
-      <div class="info-column2">
-        <h3 class="text-xl font-semibold mb-4 text-green-800">Soporte</h3>
-        <ul class="space-y-2 text-gray-600">
-          <li class="hover:text-green-600 cursor-pointer">Pasos a seguir</li>
-          <li class="hover:text-green-600 cursor-pointer">Preguntas frecuentes</li>
+      <div class="">
+        <h3 class="">Soporte</h3>
+        <ul class="">
+          <li class="">Pasos a seguir</li>
+          <li class="">Preguntas frecuentes</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <footer class="relative z-10 p-4 text-center text-gray-600 bg-white">
-    <p class="footer-x">Hecho en Colombia por estudiantes de la SIMON</p>
+  <!-- Footer  -->
+  <footer class="">
+    <p class=""> Hecho en Colombia por estudiantes de la SIMON </p>
   </footer>
+
 </div>

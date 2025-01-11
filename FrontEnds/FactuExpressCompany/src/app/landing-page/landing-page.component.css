@@ -26,73 +26,13 @@
 .hover\:bg-green-600:hover {
   background-color: #059669;
 }
+
 .info-section {
   background-color: white;
   color: #0a3622;
-  padding: 20px 50px; /* Ajustar padding lateral */
-  display: flex;
-  justify-content: space-around; /* Distribuir columnas */
-  align-items: flex-start; /* Evitar el centrado vertical */
-  width: 100%;
-  box-sizing: border-box;
-  flex-wrap: wrap; /* Permitir que las columnas se envuelvan */
-}
-
-.info-column1, .info-column2, .info-column {
-  flex: 1; /* Todas las columnas ocupan el mismo espacio */
-  text-align: center;
-  box-sizing: border-box; /* Incluye el padding en el ancho total */
-  padding: 10px;
-}
-
-/* Media query para pantallas pequeñas (móviles) */
-@media (max-width: 768px) {
-  .info-section {
-    padding: 20px 10px; /* Reducir padding en pantallas pequeñas */
-  }
-
-  .info-column1, .info-column2, .info-column {
-    flex: none; /* Deshabilitar el comportamiento flex en columnas pequeñas */
-    width: 100%; /* Las columnas ocupan el 100% del ancho */
-    text-align: center; /* Mantener el texto centrado si lo prefieres */
-  }
 }
 
 
-  .info-column1, .info-column2, .info-column {
-    flex: 100%; /* Las columnas ocuparán el 100% del ancho */
-  }
 
-  h1,h2 {
-  margin-bottom: 40px;
 
-  padding: auto;
-  }
-  .footer-x{
-    background-color: #0a3622;
-    color: white;
-    text-align: center;
-   margin: 10px -30px -20px -25px;
-   padding: 10px 10px 10px 10px;
-
-  }
-  p{
-    padding-top: 15px;
-  }
-  .info-section {
-    position: relative; /* Asegúrate de que el elemento tenga un contexto de posicionamiento */
-    padding-top: 40px; /* Espacio para que la línea no esté pegada a la parte superior */
-  }
-
-  .info-section::before {
-    content: ""; /* Necesario para el pseudo-elemento */
-    position: absolute;
-    top: 0; /* Coloca la línea en la parte superior del contenedor */
-    left: 400px;
-    right: 400px; /* Hace que la línea se extienda de lado a lado */
-    height: 0.5px; /* Altura de la línea */
-    background-color: #85978c; /* Color de la línea */
-    margin: 0 auto; /* Centra la línea si es necesario */
-    max-width: 100%; /* Asegúrate de que la línea no se extienda más allá del contenedor */
-  }
 
